@@ -611,7 +611,7 @@ public static int idusuario;
             QuartosDAOimpl func2 = new QuartosDAOimpl();
             Quartos dts2 = new Quartos();
             
-            dts.setIdquarto(Integer.parseInt(txt_id_quarto.getText()));
+            dts2.setIdquarto(Integer.parseInt(txt_id_quarto.getText()));
             func2.ocupar(dts2);
             
             }
