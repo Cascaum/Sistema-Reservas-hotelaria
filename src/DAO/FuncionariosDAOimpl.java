@@ -76,12 +76,6 @@ public class FuncionariosDAOimpl extends BDconexaoDAO implements FuncionariosDAO
     }
 
     // FUNÇÃO QUE RECEBE A CLASSE "Funcionarios" RESPONSÁVEL POR INSERIR AS INFORMAÇÕES DO SISTEMA NO BANCO DE DADOS.
-
-    /**
-     *
-     * @param dts
-     * @return
-     */
     @Override
     public boolean inserir(Funcionarios dts) { // "dts" É UM OBJETO CRIADO PARA IDENTIFICAR QUE O CÓDIGO ESTÁ DIRETAMENTE ITERADO  AO BANCO.
         // VALIDAR SE JÁ NÃO EXISTEM UM DADO IGUAL
@@ -144,12 +138,6 @@ public class FuncionariosDAOimpl extends BDconexaoDAO implements FuncionariosDAO
     }
 
     // FUNÇÃO QUE RECEBE A CLASSE "Funcionarios" RESPONSÁVEL POR EDITAR AS INFORMAÇÕES DO SISTEMA NO BANCO DE DADOS
-
-    /**
-     *
-     * @param dts
-     * @return
-     */
     @Override
     public boolean editar(Funcionarios dts) { // "dts" É UM OBJETO CRIADO PARA IDENTIFICAR QUE O CÓDIGO ESTÁ DIRETAMENTE ITERADO  AO BANCO
         // CRIAÇÃO DE UMA QUERY PARA EDIÇÃO DOS DADOS NA TABELA "tb_pessoas"
@@ -198,12 +186,6 @@ public class FuncionariosDAOimpl extends BDconexaoDAO implements FuncionariosDAO
     }
 
     // FUNÇÃO QUE RECEBE A CLASSE "Funcionarios" RESPONSÁVEL POR DELETAR AS INFORMAÇÕES DO SISTEMA NO BANCO DE DADOS
-
-    /**
-     *
-     * @param dts
-     * @return
-     */
     @Override
     public boolean deletar(Funcionarios dts) { // "dts" É UM OBJETO CRIADO PARA IDENTIFICAR QUE O CÓDIGO ESTÁ DIRETAMENTE ITERADO  AO BANCO
         // CRIAÇÃO DE UMA QUERY PARA DELEÇÃO DOS DADOS NA TABELA "tb_funcionarios"
@@ -238,13 +220,6 @@ public class FuncionariosDAOimpl extends BDconexaoDAO implements FuncionariosDAO
     }
 
     // FUNÇÃO DESTINADA AO CADASTRO E VALIDAÇÃO DO ACESSO DOS USUÁRIOS DO SISTEMA
-
-    /**
-     *
-     * @param login
-     * @param senha
-     * @return
-     */
     @Override
     public DefaultTableModel login(String login, String senha) { // METODO QUE RECEBE O LOGIN E SENHA PARA ACESSO AO SISTEMA
         DefaultTableModel modelo; // CRIA VARIAVEL PARA ARMAZENAR O MODELO DA TABELA DE INTERFACE GRÁFICA
