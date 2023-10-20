@@ -20,7 +20,7 @@ public class frm_funcionarios extends javax.swing.JInternalFrame {
     public frm_funcionarios() {
         initComponents();
         desativar();
-        mostrar("null");
+        mostrar("");
     }
     
     private String acao = "salvar"; // DEIXAR AS COLUNAS OCULTAS, NÃO APARECENDO PARA O USUÁRIO
@@ -38,7 +38,7 @@ public class frm_funcionarios extends javax.swing.JInternalFrame {
         txt_telefone.setEnabled(false);
         txt_email.setEnabled(false);
         txt_endereco.setEnabled(false);
-        txt_codigo_cliente.setEnabled(false);
+        //txt_codigo_cliente.setEnabled(false);
         txt_salario.setEnabled(false);
         txt_senha.setEnabled(false);
         txt_login.setEnabled(false);
@@ -53,7 +53,7 @@ public class frm_funcionarios extends javax.swing.JInternalFrame {
         txt_email.setText("");
         txt_endereco.setText("");
         txt_nome.setText("");
-        txt_codigo_cliente.setText("");
+        //txt_codigo_cliente.setText("");
         txt_salario.setText("");
         txt_senha.setText("");
         txt_login.setText("");
@@ -68,7 +68,7 @@ public class frm_funcionarios extends javax.swing.JInternalFrame {
         txt_telefone.setEnabled(true);
         txt_email.setEnabled(true);
         txt_endereco.setEnabled(true);
-        txt_codigo_cliente.setEnabled(true);
+        //txt_codigo_cliente.setEnabled(true);
         txt_salario.setEnabled(true);
         txt_senha.setEnabled(true);
         txt_login.setEnabled(true);
@@ -83,7 +83,7 @@ public class frm_funcionarios extends javax.swing.JInternalFrame {
         txt_email.setText("");
         txt_endereco.setText("");
         txt_nome.setText("");
-        txt_codigo_cliente.setText("");
+        //txt_codigo_cliente.setText("");
         txt_salario.setText("");
         txt_senha.setText("");
         txt_login.setText("");
@@ -110,7 +110,7 @@ public class frm_funcionarios extends javax.swing.JInternalFrame {
         txt_email.setText("");
         txt_endereco.setText("");
         txt_nome.setText("");
-        txt_codigo_cliente.setText("");
+        //txt_codigo_cliente.setText("");
         txt_salario.setText("");
         txt_senha.setText("");
         txt_login.setText("");
@@ -126,9 +126,7 @@ public class frm_funcionarios extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        txt_codigo_cliente = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         CB_tipo = new javax.swing.JComboBox<>();
@@ -174,15 +172,7 @@ public class frm_funcionarios extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setTitle("Cadastro de Funcionários");
 
-        jLabel9.setText("Cod. Funcionario");
-
         jLabel4.setText("E-mail");
-
-        txt_codigo_cliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_codigo_clienteActionPerformed(evt);
-            }
-        });
 
         jLabel5.setText("Documento");
 
@@ -305,22 +295,16 @@ public class frm_funcionarios extends javax.swing.JInternalFrame {
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel3))
                                 .addGap(35, 35, 35)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txt_email)
-                                    .addComponent(txt_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txt_codigo_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(txt_email, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
                                         .addComponent(jLabel8)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(txt_num_doc)
-                                            .addComponent(txt_telefone)))))
+                                            .addComponent(txt_telefone)))
+                                    .addComponent(txt_nome)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -341,10 +325,10 @@ public class frm_funcionarios extends javax.swing.JInternalFrame {
                                         .addGap(0, 0, Short.MAX_VALUE)
                                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(txt_login, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txt_salario))
-                                        .addGap(53, 53, 53)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txt_salario, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txt_login, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, Short.MAX_VALUE)
                                         .addComponent(jLabel14)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -384,9 +368,7 @@ public class frm_funcionarios extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(txt_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9)
-                    .addComponent(txt_codigo_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -479,10 +461,14 @@ public class frm_funcionarios extends javax.swing.JInternalFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LB_registros)
+                .addGap(47, 47, 47))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 643, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 689, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -492,17 +478,14 @@ public class frm_funcionarios extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btn_apagar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btn_sair)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(LB_registros)
-                .addGap(47, 47, 47))
+                        .addComponent(btn_sair)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(16, 16, 16)
                     .addComponent(jLabel12)
-                    .addContainerGap(346, Short.MAX_VALUE)))
+                    .addContainerGap(552, Short.MAX_VALUE)))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -535,7 +518,7 @@ public class frm_funcionarios extends javax.swing.JInternalFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -549,10 +532,6 @@ public class frm_funcionarios extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txt_codigo_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_codigo_clienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_codigo_clienteActionPerformed
 
     private void txt_id_pessoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_id_pessoaActionPerformed
         // TODO add your handling code here:
@@ -757,12 +736,10 @@ public class frm_funcionarios extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextField txt_codigo_cliente;
     private javax.swing.JTextField txt_email;
     private javax.swing.JTextArea txt_endereco;
     public static javax.swing.JTextField txt_id_pessoa;

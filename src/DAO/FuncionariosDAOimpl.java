@@ -84,6 +84,23 @@ public class FuncionariosDAOimpl extends BDconexaoDAO implements FuncionariosDAO
      */
     @Override
     public boolean inserir(Funcionarios dts) { // "dts" É UM OBJETO CRIADO PARA IDENTIFICAR QUE O CÓDIGO ESTÁ DIRETAMENTE ITERADO  AO BANCO.
+        // VALIDAR SE JÁ NÃO EXISTEM UM DADO IGUAL
+        String numeroDocumento = dts.getNum_documento(); // RECEBE O DADO
+        String verificaSQL = "SELECT COUNT(*) FROM tb_pessoas WHERE num_documento=?"; // VERIFICA POR MEIO DE CONTAGE SE TEM O DADO NO BANCO
+        try {
+            PreparedStatement verificaPst = cn.prepareStatement(verificaSQL); // CRIA CONEXÃO COM O BANCO DE DADOS
+            verificaPst.setString(1, numeroDocumento); // VERIFICA SE HÁ ALGUM REGISTRO NA TABELA QUE POSSUI O MESMO DADO. *Ao valor da variável numeroDocumento ao primeiro parâmetro da consulta 
+            ResultSet resultSet = verificaPst.executeQuery(); // EXECUTA A QUERY
+
+            if (resultSet.next()) { // CASO O JÁ TENHA UM DADO IGUAL NO BANCO
+                int count = resultSet.getInt(1);
+                if (count > 0) { // SE RETORNAR 1, INDICA QUE JÁ EXISTE O DADO IGUAL BANCO
+                    JOptionPane.showMessageDialog(null, "Um funcionario com o número de documento " + numeroDocumento + " já está cadastrado.");
+                    return false;
+                }
+            }
+
+        // CASO NÃO TENHA DADOS IGUAIS, EXECUTA A QUERY DE INSERÇÃO
         // CRIAÇÃO DE UMA QUERY PARA INSERÇÃO DOS DADOS NA TABELA "tb_pessoas".
         sSQL = "insert into tb_pessoas (nome_pessoa, tipo_documento, num_documento, endereco, telefone, email)"
                 + "values(?,?,?,?,?,?)";
@@ -91,7 +108,7 @@ public class FuncionariosDAOimpl extends BDconexaoDAO implements FuncionariosDAO
         sSQL2 = "insert into tb_funcionarios (id_pessoa, salario, acesso, login, senha, estado)"
                 + "values((select id_pessoa from tb_pessoas order by id_pessoa desc limit 1),?,?,?,?,?)";
 
-        try { // BLOCO RESPONSÁVEL PELA EXECUÇÃO DAS QUERYS. 
+            // BLOCO RESPONSÁVEL PELA EXECUÇÃO DAS QUERYS. 
             PreparedStatement pst = cn.prepareStatement(sSQL); // OBJETO CRIADO PARA EXECUTAR A QUERY "sSQL"
             PreparedStatement pst2 = cn.prepareStatement(sSQL2); // OBJETO CRIADO PARA EXECUTAR A QUERY "sSQL2"
 

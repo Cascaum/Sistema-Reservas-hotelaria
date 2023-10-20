@@ -20,7 +20,7 @@ public class frm_clientes extends javax.swing.JInternalFrame {
     public frm_clientes() {
         initComponents();
         desativar();
-        mostrar("null");
+        mostrar("");
     }
     
     private String acao = "salvar"; // DEIXAR AS COLUNAS OCULTAS, NÃO APARECENDO PARA O USUÁRIO
@@ -206,8 +206,6 @@ public class frm_clientes extends javax.swing.JInternalFrame {
                 txt_nomeActionPerformed(evt);
             }
         });
-
-        jLabel11.setText("Codigo");
 
         jLabel8.setText("Telefone");
 

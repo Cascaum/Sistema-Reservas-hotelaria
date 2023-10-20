@@ -103,11 +103,25 @@ public class QuartosDAOimpl extends BDconexaoDAO implements QuartosDAO { // DECL
     // FUNÇÃO QUE RECEBE A CLASSE "Quartos" RESPONSÁVEL POR INSERIR AS INFORMAÇÕES DO SISTEMA NO BANCO DE DADOS
     @Override
     public boolean inserir(Quartos dts) { // "dts" É UM OBJETO CRIADO PARA IDENTIFICAR QUE O CÓDIGO ESTÁ DIRETAMENTE ITERADO  AO BANCO
-        // CRIAÇÃO DE UMA QUERY PARA INSERÇÃO DOS DADOS NA TABELA "tb_quartos"
-        sSQL = "insert into tb_quartos (numero, andar, descricao, caracteristicas, preco_diaria, estado, tipo_quarto)"
-                + "values(?,?,?,?,?,?,?)";
+        // VALIDAR SE JÁ NÃO EXISTEM UM DADO IGUAL
+        String numeroQuarto = dts.getNumero(); // RECEBE O DADO
+        String verificaSQL = "SELECT COUNT(*) FROM tb_quartos WHERE numero=?"; // VERIFICA SE TEM O DADO NO BANCO
+        try {
+            PreparedStatement verificaPst = cn.prepareStatement(verificaSQL);  // CRIA CONEXÃO COM O BANCO DE DADOS
+            verificaPst.setString(1, numeroQuarto); // VERIFICA SE HÁ ALGUM REGISTRO NA TABELA QUE POSSUI O MESMO DADO. *Ao valor da variável numeroQuarto ao primeiro parâmetro da consulta 
+            ResultSet resultSet = verificaPst.executeQuery(); // EXECUTA A QUERY
 
-        try { // BLOCO RESPONSÁVEL PELA EXECUÇÃO DAS QUERYS.
+            if (resultSet.next()) { // CASO O JÁ TENHA UM DADO IGUAL NO BANCO
+                int count = resultSet.getInt(1); 
+                if (count > 0) { // SE RETORNAR 1, INDICA QUE JÁ EXISTE O DADO IGUAL BANCO
+                    JOptionPane.showMessageDialog(null, "O quarto com o número " + numeroQuarto + " já existe no banco de dados.");
+                    return false;
+                }
+            }
+            // CASO NÃO TENHA DADOS IGUAIS, EXECUTA A QUERY DE INSERÇÃO
+            sSQL = "insert into tb_quartos (numero, andar, descricao, caracteristicas, preco_diaria, estado, tipo_quarto)"
+                    + "values(?,?,?,?,?,?,?)";
+
             PreparedStatement pst = cn.prepareStatement(sSQL); // OBJETO CRIADO PARA EXECUTAR A QUERY "sSQL"
             pst.setString(1, dts.getNumero());
             pst.setString(2, dts.getAndar());
