@@ -613,7 +613,7 @@ public class frm_quartos extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> CB_andar;
-    private javax.swing.JComboBox<String> CB_estado;
+    public static javax.swing.JComboBox<String> CB_estado;
     private javax.swing.JComboBox<String> CB_tipo;
     private javax.swing.JLabel LB_registros;
     private javax.swing.JTable TB_lista;

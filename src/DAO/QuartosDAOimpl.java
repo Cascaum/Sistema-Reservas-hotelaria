@@ -39,6 +39,7 @@ public class QuartosDAOimpl extends BDconexaoDAO implements QuartosDAO { // DECL
         try { // BLOCO TRY RESPONSÁVEL POR EXECUTAR A CONSULTA DO sSQL
             Statement st = cn.createStatement(); // OBJETO USADO PARA EXECUTAR A CONSULTA
             ResultSet rs = st.executeQuery(sSQL); // OBJETO RETORNADO PELA CONSULTA PARA ITERAR PELOS REGISTROS
+            boolean registrosEncontrados = false; // Variável para verificar se registros foram encontrados
             while (rs.next()) { // BUSCA CADA UM DOS REGISTROS NO BANCO E ADICIONA EM UMA NOVA LINHA NA TABELA
                 registro[0] = rs.getString("id_quarto");
                 registro[1] = rs.getString("numero");
@@ -51,7 +52,12 @@ public class QuartosDAOimpl extends BDconexaoDAO implements QuartosDAO { // DECL
 
                 totalregistros = totalregistros + 1; // VARIÁVEL RESPONSÁVEL POR CONTABILIZAR A QUANTIDADE DE REGISTROS NO BANCO
                 modelo.addRow(registro); // ADICIONA UM NOVO REGISTRO A TABELA "modelo"
+                
+                registrosEncontrados = true; // Marcar que registros foram encontrados
             }
+            if (!registrosEncontrados) {
+            JOptionPane.showMessageDialog(null, "Nenhum registro encontrado", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        }
             return modelo; // RETORNA O OBJETO "modelo" QUE CUIDA DA APRESENTAÇÃO DOS DADOS DA TABELA
         } catch (Exception e) { // TRATA DA EXCESSÃO CASO DE PROBLEMA NA EXECUÇÃO DA CONSULTA
             JOptionPane.showConfirmDialog(null, e);
@@ -128,7 +134,7 @@ public class QuartosDAOimpl extends BDconexaoDAO implements QuartosDAO { // DECL
     @Override
     public boolean editar(Quartos dts) { // "dts" É UM OBJETO CRIADO PARA IDENTIFICAR QUE O CÓDIGO ESTÁ DIRETAMENTE ITERADO  AO BANCO
         // CRIAÇÃO DE UMA QUERY PARA EDIÇÃO DOS DADOS NA TABELA "tb_quartos"
-        sSQL = "update tb_quartos set numero=?, andar=?, descricao=?, caracteristicas=?, preco_diaria=?, estado=?, tipo_quarto=?"
+        sSQL = "update tb_quartos set numero=?, andar=?, descricao=?, caracteristicas=?, preco_diaria=?, estado=?, tipo_quarto=? "
                 + "where id_quarto=?";
 
         try { // BLOCO RESPONSÁVEL PELA EXECUÇÃO DAS QUERYS.
@@ -160,7 +166,7 @@ public class QuartosDAOimpl extends BDconexaoDAO implements QuartosDAO { // DECL
     @Override
     public boolean desocupar(Quartos dts) { // "dts" É UM OBJETO CRIADO PARA IDENTIFICAR QUE O CÓDIGO ESTÁ DIRETAMENTE ITERADO  AO BANCO
         // CRIAÇÃO DE UMA QUERY PARA EDIÇÃO DOS DADOS NA TABELA "tb_quartos"
-        sSQL = "update tb_quartos set estado='Disponível'"
+        sSQL = "update tb_quartos set estado='Disponível' "
                 + "where id_quarto=?";
 
         try { // BLOCO RESPONSÁVEL PELA EXECUÇÃO DAS QUERYS.
@@ -184,10 +190,9 @@ public class QuartosDAOimpl extends BDconexaoDAO implements QuartosDAO { // DECL
 
     // FUNÇÃO QUE RECEBE A CLASSE "Quartos" RESPONSÁVEL POR EDITAR AS INFORMAÇÕES DO SISTEMA NO BANCO DE DADOS E OCUPAR.
     @Override
-    public boolean ocupar(Quartos dts) { // "dts" É UM OBJETO CRIADO PARA IDENTIFICAR QUE O CÓDIGO ESTÁ DIRETAMENTE ITERADO  AO BANCO 
-        // CRIAÇÃO DE UMA QUERY PARA EDIÇÃO DOS DADOS NA TABELA "tb_quartos"
-        sSQL = "update tb_quartos set estado='Ocupado' "
-                + "where id_quarto=?";
+    public boolean ocupar(Quartos dts) { 
+        sSQL = "update tb_quartos set estado='Ocupado' " +
+                "where id_quarto=?";
 
         try { // BLOCO RESPONSÁVEL PELA EXECUÇÃO DAS QUERYS.
             PreparedStatement pst = cn.prepareStatement(sSQL); // OBJETO CRIADO PARA EXECUTAR A QUERY "sSQL"

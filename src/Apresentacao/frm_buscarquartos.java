@@ -88,6 +88,12 @@ public class frm_buscarquartos extends javax.swing.JFrame {
 
         jLabel10.setText("Pesquisar");
 
+        txt_pesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_pesquisarActionPerformed(evt);
+            }
+        });
+
         btn_buscar.setText("Buscar");
         btn_buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -182,6 +188,10 @@ public class frm_buscarquartos extends javax.swing.JFrame {
            this.dispose();
         }
     }//GEN-LAST:event_TB_listaMousePressed
+
+    private void txt_pesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_pesquisarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_pesquisarActionPerformed
 
     /**
      * @param args the command line arguments

@@ -86,7 +86,6 @@ public static int idusuario;
         txt_dt_reserva.setEnabled(true);
         txt_dt_saida.setEnabled(true);
         
-        // ADD BOTÃO NOVO?
         btn_salvar.setEnabled(true);
         btn_busca_clientes.setEnabled(true);
         btn_busca_quartos.setEnabled(true);
@@ -609,11 +608,12 @@ public static int idusuario;
             desativar();
             
             // FUNÇÃO PARA OCUPAR O QUARTO
-            QuartosDAOimpl func3 = new QuartosDAOimpl();
-            Quartos dts3 = new Quartos();
+            QuartosDAOimpl func2 = new QuartosDAOimpl();
+            Quartos dts2 = new Quartos();
             
-            dts3.setIdquarto(Integer.parseInt(txt_id_quarto.getText()));
-            func3.ocupar(dts3);
+            dts.setIdquarto(Integer.parseInt(txt_id_quarto.getText()));
+            func2.ocupar(dts2);
+            
             }
         } else if(acao.equals("editar")) {
             dts.setIdreserva(Integer.parseInt(txt_id_reserva.getText()));
@@ -724,7 +724,7 @@ public static int idusuario;
     private void btn_busca_quartosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_busca_quartosActionPerformed
         frm_buscarquartos form = new frm_buscarquartos();
         form.toFront();
-        form.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);  // Set the default close operation
+        //form.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);  // Set the default close operation
 
         form.setVisible(true);
     }//GEN-LAST:event_btn_busca_quartosActionPerformed

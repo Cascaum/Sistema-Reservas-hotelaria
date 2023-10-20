@@ -46,6 +46,7 @@ public class ReservasDAOimpl extends BDconexaoDAO implements ReservasDAO { // DE
         try { // BLOCO TRY RESPONSÁVEL POR EXECUTAR A CONSULTA DO sSQL 
             Statement st = cn.createStatement(); // OBJETO USADO PARA EXECUTAR A CONSULTA
             ResultSet rs = st.executeQuery(sSQL); // OBJETO RETORNADO PELA CONSULTA PARA ITERAR PELOS REGISTROS
+            boolean registrosEncontrados = false; // Variável para verificar se registros foram encontrados
             while (rs.next()) { // BUSCA CADA UM DOS REGISTROS NO BANCO E ADICIONA EM UMA NOVA LINHA NA TABELA.
                 registro[0] = rs.getString("id_reserva");
                 registro[1] = rs.getString("id_quarto");
@@ -63,7 +64,12 @@ public class ReservasDAOimpl extends BDconexaoDAO implements ReservasDAO { // DE
 
                 totalregistros = totalregistros + 1; // VARIÁVEL RESPONSÁVEL POR CONTABILIZAR A QUANTIDADE DE REGISTROS NO BANCO
                 modelo.addRow(registro); // ADICIONA UM NOVO REGISTRO A TABELA "modelo"
+               
+                registrosEncontrados = true; // Marcar que registros foram encontrados
             }
+            if (!registrosEncontrados) {
+            JOptionPane.showMessageDialog(null, "Nenhum registro encontrado", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        }
             return modelo; // RETORNA O OBJETO "modelo" QUE CUIDA DA APRESENTAÇÃO DOS DADOS DA TABELA
         } catch (Exception e) { // TRATA DA EXCESSÃO CASO DE PROBLEMA NA EXECUÇÃO DA CONSULTA
             JOptionPane.showConfirmDialog(null, e);
