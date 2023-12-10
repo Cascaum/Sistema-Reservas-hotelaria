@@ -14,9 +14,8 @@ import java.util.Date;
 public class Pagamentos { // CLASSE RESPONSÁVEL PELA CRIAÇÃO DAS VARIAVEIS QUE COMPÕE/DEFINEM OS PAGAMENTOS NO SISTEMA
     private int idpagamento; // DECLARA O ID DO PAGAMENTO. *Definido como alto increment
     private int idreserva; // DECLARA O ID DA RESERVA. *Definido como alto increment
-    private String tipo_comprovate; // DECLARA O TIPO DE COMPROVANTE
+    private String tipo_comprovante; // DECLARA O TIPO DE COMPROVANTE
     private String  num_comprovante; // DECLARA O NÚMERO NUMERO DO COMPROVANTE
-    private Double taxa; // DECLARA A TAXA
     private Double total_pagamento; // DECLARA O TOTAL DO PAGAMENTO
     private Date data_emissao; // DECLARA A DATA DA EMISSÃO
     private Date data_pagamento; // DECLARA A DATA DE PAGEMENTO
@@ -26,12 +25,11 @@ public class Pagamentos { // CLASSE RESPONSÁVEL PELA CRIAÇÃO DAS VARIAVEIS QU
     }
 
     // INICIA O MÉTODO CONSTRUTOR
-    public Pagamentos(int idpagamento, int idreserva, String tipo_comprovate, String num_comprovante, Double taxa, Double total_pagamento, Date data_emissao, Date data_pagamento) {
+    public Pagamentos(int idpagamento, int idreserva, String tipo_comprovante, String num_comprovante, Double total_pagamento, Date data_emissao, Date data_pagamento) {
         this.idpagamento = idpagamento;
         this.idreserva = idreserva;
-        this.tipo_comprovate = tipo_comprovate;
+        this.tipo_comprovante = tipo_comprovante;
         this.num_comprovante = num_comprovante;
-        this.taxa = taxa;
         this.total_pagamento = total_pagamento;
         this.data_emissao = data_emissao;
         this.data_pagamento = data_pagamento;
@@ -54,12 +52,12 @@ public class Pagamentos { // CLASSE RESPONSÁVEL PELA CRIAÇÃO DAS VARIAVEIS QU
         this.idreserva = idreserva;
     }
 
-    public String getTipo_comprovate() {
-        return tipo_comprovate;
+    public String getTipo_comprovante() {
+        return tipo_comprovante;
     }
 
-    public void setTipo_comprovate(String tipo_comprovaten) {
-        this.tipo_comprovate = tipo_comprovaten;
+    public void setTipo_comprovante(String tipo_comprovante) {
+        this.tipo_comprovante = tipo_comprovante;
     }
 
     public String getNum_comprovante() {
@@ -68,14 +66,6 @@ public class Pagamentos { // CLASSE RESPONSÁVEL PELA CRIAÇÃO DAS VARIAVEIS QU
 
     public void setNum_comprovante(String num_comprovante) {
         this.num_comprovante = num_comprovante;
-    }
-
-    public Double getTaxa() {
-        return taxa;
-    }
-
-    public void setTaxa(Double taxa) {
-        this.taxa = taxa;
     }
 
     public Double getTotal_pagamento() {

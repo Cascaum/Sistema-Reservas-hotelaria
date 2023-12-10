@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Simple_Blue" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="39c38ed5-3883-4c49-9235-1ab8fe4f362a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="bancoreserva"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="470"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="521"/>
+	<queryString>
+		<![CDATA[SELECT 
+			bancoreserva.tb_quartos.id_quarto AS tb_quartos_id_quarto,
+			bancoreserva.tb_quartos.numero AS tb_quartos_numero,
+			bancoreserva.tb_quartos.andar AS tb_quartos_andar,
+			bancoreserva.tb_quartos.descricao AS tb_quartos_descricao,
+			bancoreserva.tb_quartos.caracteristicas AS tb_quartos_caracteristicas,
+			bancoreserva.tb_quartos.preco_diaria AS tb_quartos_preco_diaria,
+			bancoreserva.tb_quartos.estado AS tb_quartos_id_quarto,
+			bancoreserva.tb_quartos.tipo_quarto AS tb_quartos_tipo_quarto
+	FROM
+ 	bancoreserva.tb_quartos]]>
+	</queryString>
+	<field name="tb_quartos_id_quarto" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id_quarto"/>
+		<property name="com.jaspersoft.studio.field.label" value="tb_quartos_id_quarto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_quartos"/>
+	</field>
+	<field name="tb_quartos_numero" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="numero"/>
+		<property name="com.jaspersoft.studio.field.label" value="tb_quartos_numero"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_quartos"/>
+	</field>
+	<field name="tb_quartos_andar" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="andar"/>
+		<property name="com.jaspersoft.studio.field.label" value="tb_quartos_andar"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_quartos"/>
+	</field>
+	<field name="tb_quartos_descricao" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="descricao"/>
+		<property name="com.jaspersoft.studio.field.label" value="tb_quartos_descricao"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_quartos"/>
+	</field>
+	<field name="tb_quartos_caracteristicas" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="caracteristicas"/>
+		<property name="com.jaspersoft.studio.field.label" value="tb_quartos_caracteristicas"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_quartos"/>
+	</field>
+	<field name="tb_quartos_preco_diaria" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="preco_diaria"/>
+		<property name="com.jaspersoft.studio.field.label" value="tb_quartos_preco_diaria"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_quartos"/>
+	</field>
+	<field name="COLUMN_7" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="estado"/>
+		<property name="com.jaspersoft.studio.field.label" value="tb_quartos_id_quarto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_quartos"/>
+	</field>
+	<field name="tb_quartos_tipo_quarto" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="tipo_quarto"/>
+		<property name="com.jaspersoft.studio.field.label" value="tb_quartos_tipo_quarto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_quartos"/>
+	</field>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="85">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-19" width="595" height="104" backcolor="#D188CC" uuid="bedce25b-8ab3-4991-8434-8c7a584a24cc"/>
+				<staticText>
+					<reportElement x="92" y="12" width="234" height="81" forecolor="#FFFFFF" uuid="5676b5d3-a46d-41d1-a840-cf6ff945cbdd"/>
+					<textElement textAlignment="Justified">
+						<font fontName="MV Boli" size="22" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Pousada
+Recanto da maré]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="c9ae5157-3264-4c74-93cf-2ed1402b6236"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Formulário de quartos]]></text>
+				</staticText>
+				<image>
+					<reportElement x="10" y="12" width="110" height="81" uuid="23a883dc-46ee-4d48-8042-ce11fcf5ae73"/>
+					<imageExpression><![CDATA["C:/Users/rafas/Documents/NetBeansProjects/SistemaHoteleiro1/src/icones2/de-praia1.png"]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="27"/>
+	</columnHeader>
+	<detail>
+		<band height="42">
+			<textField>
+				<reportElement x="206" y="-21" width="60" height="18" uuid="a4b3c06e-0f80-4e15-ace3-a33b6ee22d5d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="69b48057-928f-4245-86c4-17e0fef3220c"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{tb_quartos_numero}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="140" y="-25" width="70" height="21" uuid="071384b9-139f-4169-9208-6b34debd659b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="69b48057-928f-4245-86c4-17e0fef3220c"/>
+				</reportElement>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Quarto:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="50" y="-21" width="50" height="18" uuid="67f975fc-8de6-4060-8046-fd496c20256a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="10096ed7-2c33-4688-aedb-3ce5932b528d"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{tb_quartos_andar}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="-25" width="50" height="21" uuid="5d2971a7-5363-4898-ad44-1ea0d219dfa8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="10096ed7-2c33-4688-aedb-3ce5932b528d"/>
+				</reportElement>
+				<textElement>
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Andar:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="500" y="-22" width="50" height="20" uuid="6042fb16-0dc1-40b7-a092-a4c1ff6980e1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cd9a60c8-38e8-4b6c-a2c1-48ea183e7f59"/>
+				</reportElement>
+				<textFieldExpression><![CDATA["R$"+$F{tb_quartos_preco_diaria}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="-21" width="60" height="18" uuid="e4908701-9cad-49c1-8907-cc8234d65d6a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c0220667-dbbb-4a05-af9b-44a95b744b31"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{tb_quartos_tipo_quarto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="300" y="-26" width="40" height="21" uuid="c1be26a3-382f-42b5-9368-e1c6095a1179">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c0220667-dbbb-4a05-af9b-44a95b744b31"/>
+				</reportElement>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="-26" width="50" height="21" uuid="e829b494-4d0c-492a-9c70-ac47d7f97bf9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cd9a60c8-38e8-4b6c-a2c1-48ea183e7f59"/>
+				</reportElement>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Diária:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-20" y="13" width="595" height="1" forecolor="#666666" uuid="b79c0279-08a6-4c05-bf72-e4d9604b2af1"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="61">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="30" width="515" height="13" backcolor="#E6E6E6" uuid="f4d64e9f-fa6e-489a-95d5-fe91eadeb0c6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="30" width="40" height="13" backcolor="#E6E6E6" uuid="a0a46536-faa4-4f87-ad93-264cc97a700c"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="30" width="100" height="13" uuid="e1039ef5-0162-4662-b049-c2a35b7b9944"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
